@@ -14,7 +14,7 @@ Facter.add("puppetdbversion") do
       if output.length >0
         val = output.split('=')[-1]
         val.to_f
-      elsif FACTER.value(:operatingsystem) == /RedHat|Fedora/
+      elsif Facter.value(:operatingsystem) == /RedHat|Fedora/
         output = %x{rpm -q puppetdb --qf '%{VERSION}' 2>/dev/null}.to_f
         unless output.nil?
           val = output
