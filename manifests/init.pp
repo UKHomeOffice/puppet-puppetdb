@@ -392,7 +392,7 @@ class puppetdb (
     name   => $puppetdb::package,
   }
 
-  if $::puppetdbversion 
+  if $::puppetdbversion  {
     $puppetdbversion = $::puppetdbversion
   } else {
     $puppetdbversion = '1.5'
