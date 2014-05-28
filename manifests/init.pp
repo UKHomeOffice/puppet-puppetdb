@@ -392,7 +392,7 @@ class puppetdb (
     name   => $puppetdb::package,
   }
 
-  if inline_template('<%= scope.lookupvar("::puppetdbversion")?1:0 %>') {
+  if $::puppetdbversion 
     $puppetdbversion = $::puppetdbversion
   } else {
     $puppetdbversion = '1.5'
