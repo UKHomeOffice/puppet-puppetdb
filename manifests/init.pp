@@ -408,6 +408,8 @@ class puppetdb (
     file {'/etc/puppetdb/conf.d/jetty.ini':
       ensure  => $puppetdb::manage_file,
       content => template($jetty_template),
+      mode    => $puppetdb::config_file_mode,
+      owner   => $puppetdb::config_file_owner,
       require => Package['puppetdb'],
       notify  => Service['puppetdb'],
     }

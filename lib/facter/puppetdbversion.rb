@@ -31,3 +31,4 @@ Facter.add("puppetdbversion") do
     end
   end
 end
+
